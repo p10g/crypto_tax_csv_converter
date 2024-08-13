@@ -53,6 +53,7 @@ l10n/
 
 #Secret
 confidential.py
+secret.py
 data/**
 price_history/data/**
 *.csv

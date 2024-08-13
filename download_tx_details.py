@@ -3,9 +3,6 @@ from typing import Optional
 
 base_url = "http://api.solana.fm/"
 transfers_endpoint_url = "v0/transfers/"
-wallet_address = "Dztd3HYBoiBHVLcSZwPfDUwaaCyohqhLGJ4YTy2funoM"
-withdraw_transaction_hash = "5thVFibt1pDMRdMnPFYdbquUyXe3mx136YYQwbHcdnX6NXQw14Rr8W2YnanEwiPVVmLVDzZuJaGqwsXn2mHvAiY2"
-harvest_transaction_hash = "f8QPHeEusirLAokFMWAvtZdKpUFX33yc672qq5zb3gpvmH1CLFkYYBfB19xMjKjLG2WCL1r88p65WCiGLGLfcBV"
 
 ACTION_BURN_CHECKED = "burnChecked"
 
