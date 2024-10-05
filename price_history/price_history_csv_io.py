@@ -24,6 +24,7 @@ from secret import ALPHA_VANTAGE_API_KEY, BIRDEYE_API_KEY
 # Address: written on the left panel on birdeye.so
 # Public name: written on the left panel on birdeye.so
 _TOKEN_DATA = [
+#   (ticker,                token_address,                  public_name)
     ("Mail", "C8cNX2D1y3jqKpMFkQhP1gGbfvTEdeckZXLBKSN5z5KF", "SolMail"),
     ("POPCAT", "7GCihgDB8fe6KNjn2MYtkzZcRjQy3t9GHdC8uHYmW2hr", "POPCAT"),
     ("SOLC", "DLUNTKRQt7CrpqSX1naHUYoBznJ9pvMP65uCeWQgYnRK", "SolCard"),
@@ -31,9 +32,16 @@ _TOKEN_DATA = [
     ("RENDER", "rndrizKT3MK1iimdxRdWabcF7Zg7AR5T4nud4EkHBof", "Render Token"),
     ("JLP", "27G8MtK7VtTcCHkpASjSDdkWWYfoqT6ggEuKidVJidD4", "Jupiter Perps LP"),
     ("TRUMP", "HaP8r3ksG76PhQLTqR8FYBeNiQpejcFbQmiHbg787Ut1", "MAGA (Wormhole)"),
+    ("coby", "8WnQQRbuEZ3CCDbH5MCVioBbw6o75NKANq9WdPhBDsWo", "coby"),
+    ("MOODENG", "ED5nyyWEzpPPiWimP8vYm7sD7TD3LAt3Q3gRTWHzPJBY", "Moo Deng"),
+    ("FWOG", "A8C3xuqscfmyLrte3VmTqrAq8kgMASius9AFNANwpump", "FWOG"),
+    ("BAKED", "CQbXk942c6GPcRwtZ2WMFP5JcQ9NqbXtb8jUewBi7GoT", "BAKED"),
+    ("DEGOD", "degod39zqQWzpG6h4b7SJLLTCFE6FeZnZD8BwHBFxaN", "DEGOD"),
+    ("PUPS", "PUPS8ZgJ5po4UmNDfqtDMCPP6M1KP3EEzG9Zufcwzrg", "Migrate Your Pups"),
+    ("MEW", "MEW1gQWJ3nEXg2qgERiKu7FAFj79PHvQVREQUzScPP5", "cat in a dogs world"),
 ]
 
-_AIRDROP_TOKEN_DATA = [
+_DUST_TOKEN_DATA = [
     ("CHEEPEPE", "FwBixtdcmxawRFzBNeUmzhQzaFuvv6czs5wCQuLgWWsg", "cheepepe"),
     ("michi", "5mbK36SZ7J19An8jFochhQS4of8g6BwUjbeCSxBSoWdp", "michi"),
     ("TARDAR", "4CfSssjL3opCn5crmQexyMXoRJuL1BWd1JKAcgBmUYcB", "Grumpy Cat"),
@@ -49,6 +57,7 @@ _AIRDROP_TOKEN_DATA = [
     ("UNDQ", "GrGBy1gBHg6WiRUWqDaapjoP43bT2YdgDfJYuiCe8TDF", "UNDIQUE"),
     ("CatWifDog", "BET9FD4fpAz1BuFyMwGmLBQMCy1sTPn4hn8k3FvaL23i", "CatWifDog"),
     ("SHROOM", "xyzR4s6H724bUq6q7MTqWxUnhi8LM5fiKKUq38h8M1P", "Shroom"),
+    ("TRUPE", "C2DbRWaoDJKMgegEKQuYCnViM9VdhrVR6FptPLm6stY7", "Trump PePe"),
 ]
 
 _TICKER_TO_DATAFRAME: Dict[str, pd.DataFrame] = {}
@@ -71,7 +80,7 @@ COL_NAME_CLOSE = "Close"
 def get_token_data() -> List[Tuple[str,str,str]]:
     global _token_data
     if 0 == len(_token_data):
-        _token_data = _TOKEN_DATA + _AIRDROP_TOKEN_DATA
+        _token_data = _TOKEN_DATA + _DUST_TOKEN_DATA
     return _token_data
 
 def get_ticker_by_token_address(token_address: str) -> str:
@@ -79,7 +88,7 @@ def get_ticker_by_token_address(token_address: str) -> str:
         if token_data[1] == token_address:
             return token_data[0]
         
-    raise RuntimeError(token_address + " not found")
+    raise RuntimeError(token_address + " not found. Add token data manually in price_history_csv_io.py")
 
 def _open_or_create_file(token_data_entry: Tuple[str, str, str]) -> TextIOWrapper:
     ticker = token_data_entry[0]

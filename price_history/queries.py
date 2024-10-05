@@ -53,6 +53,9 @@ def price_at_time(ticker: str, date_time: str) -> float:
     if 0 == len(_TICKER_TO_DATAFRAME):
         _load_csv_to_dataframes()
 
+    if "USDC" == ticker:
+        return 1.0
+
     if ticker not in _TICKER_TO_DATAFRAME:
         raise Exception("ticker {} not found in the downloaded data.".format(ticker))
     
