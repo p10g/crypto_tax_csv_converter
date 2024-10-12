@@ -7,7 +7,7 @@ transfers_endpoint_url = "v0/transfers/"
 ACTION_BURN_CHECKED = "burnChecked"
 
 def get_burnt_nft_id(tx_id: str) -> Optional[str]:
-    print("Getting details about tx: {}".format(tx_id))
+    print("Getting details of tx: {}".format(tx_id))
     url = base_url + transfers_endpoint_url + tx_id
     response = requests.get(url)
 

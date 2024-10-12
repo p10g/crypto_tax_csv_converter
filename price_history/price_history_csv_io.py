@@ -39,6 +39,8 @@ _TOKEN_DATA = [
     ("DEGOD", "degod39zqQWzpG6h4b7SJLLTCFE6FeZnZD8BwHBFxaN", "DEGOD"),
     ("PUPS", "PUPS8ZgJ5po4UmNDfqtDMCPP6M1KP3EEzG9Zufcwzrg", "Migrate Your Pups"),
     ("MEW", "MEW1gQWJ3nEXg2qgERiKu7FAFj79PHvQVREQUzScPP5", "cat in a dogs world"),
+    ("SIGMA", "5SVG3T9CNQsm2kEwzbRq6hASqh1oGfjqTtLXYUibpump", "SIGMA"),
+    ("GUMMY", "H7bTHGb5Cvo5fGe5jBDNDPUv8KykQnzyZA3qZ8sH7yxw", "GUMMY"),
 ]
 
 _DUST_TOKEN_DATA = [
@@ -58,6 +60,7 @@ _DUST_TOKEN_DATA = [
     ("CatWifDog", "BET9FD4fpAz1BuFyMwGmLBQMCy1sTPn4hn8k3FvaL23i", "CatWifDog"),
     ("SHROOM", "xyzR4s6H724bUq6q7MTqWxUnhi8LM5fiKKUq38h8M1P", "Shroom"),
     ("TRUPE", "C2DbRWaoDJKMgegEKQuYCnViM9VdhrVR6FptPLm6stY7", "Trump PePe"),
+    ("SOFAC", "9cC36bMZCt9fF53eLBQCago1czw5L9GRHZBL5adWEyAu", "SofaCat"),
 ]
 
 _TICKER_TO_DATAFRAME: Dict[str, pd.DataFrame] = {}
