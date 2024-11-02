@@ -41,6 +41,10 @@ _TOKEN_DATA = [
     ("MEW", "MEW1gQWJ3nEXg2qgERiKu7FAFj79PHvQVREQUzScPP5", "cat in a dogs world"),
     ("SIGMA", "5SVG3T9CNQsm2kEwzbRq6hASqh1oGfjqTtLXYUibpump", "SIGMA"),
     ("GUMMY", "H7bTHGb5Cvo5fGe5jBDNDPUv8KykQnzyZA3qZ8sH7yxw", "GUMMY"),
+    ("GOAT", "CzLSujWBLFsSjncfkh59rUFqvafWcY5tzedWJSuypump", "Goatseus Maximus"),
+    ("XBG", "XBGdqJ9P175hCC1LangCEyXWNeCPHaKWA17tymz2PrY", "XBorg"),
+    ("CLOUD", "CLoUDKc4Ane7HeQcPpE3YHnznRxhMimJ4MyaUqyHFzAu", "Cloud"),
+    ("ACT", "GJAFwWjJ3vnTsrQVabjBVK2TYB1YtRCQXRDfDgUnpump", "Act I : The AI Prophecy"),
 ]
 
 _DUST_TOKEN_DATA = [
@@ -61,6 +65,8 @@ _DUST_TOKEN_DATA = [
     ("SHROOM", "xyzR4s6H724bUq6q7MTqWxUnhi8LM5fiKKUq38h8M1P", "Shroom"),
     ("TRUPE", "C2DbRWaoDJKMgegEKQuYCnViM9VdhrVR6FptPLm6stY7", "Trump PePe"),
     ("SOFAC", "9cC36bMZCt9fF53eLBQCago1czw5L9GRHZBL5adWEyAu", "SofaCat"),
+    ("REL", "9HvM3nS2eDKWxNvi8vSFXRhHA1xhDW33rt4ZA1bE1DbV", "Relend"),
+    ("LAPUPU", "8PH1XWXyhvFWXWeixSbcWmfHX4uRJHQtcjnwkCgzfTkY", "Lapupu"),
 ]
 
 _TICKER_TO_DATAFRAME: Dict[str, pd.DataFrame] = {}
