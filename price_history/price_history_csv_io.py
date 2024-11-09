@@ -45,6 +45,7 @@ _TOKEN_DATA = [
     ("XBG", "XBGdqJ9P175hCC1LangCEyXWNeCPHaKWA17tymz2PrY", "XBorg"),
     ("CLOUD", "CLoUDKc4Ane7HeQcPpE3YHnznRxhMimJ4MyaUqyHFzAu", "Cloud"),
     ("ACT", "GJAFwWjJ3vnTsrQVabjBVK2TYB1YtRCQXRDfDgUnpump", "Act I : The AI Prophecy"),
+    ("LUCE", "CBdCxKo9QavR9hfShgpEBG3zekorAeD7W1jfq2o3pump", "Official Mascot of the Holy Year"),
 ]
 
 _DUST_TOKEN_DATA = [
