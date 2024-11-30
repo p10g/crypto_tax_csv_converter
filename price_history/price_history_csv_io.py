@@ -46,6 +46,13 @@ _TOKEN_DATA = [
     ("CLOUD", "CLoUDKc4Ane7HeQcPpE3YHnznRxhMimJ4MyaUqyHFzAu", "Cloud"),
     ("ACT", "GJAFwWjJ3vnTsrQVabjBVK2TYB1YtRCQXRDfDgUnpump", "Act I : The AI Prophecy"),
     ("LUCE", "CBdCxKo9QavR9hfShgpEBG3zekorAeD7W1jfq2o3pump", "Official Mascot of the Holy Year"),
+    ("DIABOLO", "EoFrf9ZDRkzLsxX45JXZNDgibEsEdG8bFmaTnJpMpump", "Official Mascot Church Of Satan"),
+    ("Pnut", "2qEHjDLDLbuBgRYvsxhc5D6uDWAivNFZGan56P1tpump", "Peanut the Squirrel"),
+    ("ME", "4Y47LEufvcSSSbTFojcvW4Y6x2KZXrqG2urNBSvHpump", "Literally Me"),
+    ("NVIDIA", "47ixSEoXn9KUnZ9FjCD78NSWDd4RxKUjcwSSYMSnpump", "Nvidia On Solana"),
+    ("SOLARIS", "3RfQPYVJgJbwyB3BzqqypCEWWryxjTfFDAcXQsckpump", "Solaris AI"),
+    ("TITS", "23CTZMjEYNNZUE4itfn3iv6kgM4xn7X7dx1kVX1Gr8Xi", "We Love Tits"),
+    ("EFR", "9So37icWcKmuMGFPPR36a82Q1E5gZJ6HFSz7Eynfpump", "End Federal Reserve"),
 ]
 
 _DUST_TOKEN_DATA = [
