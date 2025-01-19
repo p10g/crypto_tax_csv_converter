@@ -57,7 +57,7 @@ def price_at_time(ticker: str, date_time: str) -> float:
         return 1.0
 
     if ticker not in _TICKER_TO_DATAFRAME:
-        raise Exception("ticker {} not found in the downloaded data.".format(ticker))
+        raise Exception(f"ticker {ticker} not found in the downloaded data.")
     
     timestamp = datetime.strptime(date_time, DATE_FORMAT_FROM_STAKE_TAX).timestamp()
     price_history_df = _TICKER_TO_DATAFRAME[ticker]

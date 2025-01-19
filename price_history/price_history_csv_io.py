@@ -5,6 +5,7 @@ import pandas as pd
 import pytz
 import requests
 import sys
+import time
 
 from io import TextIOWrapper
 from typing import Any, Dict, Tuple, List
@@ -75,6 +76,12 @@ _DUST_TOKEN_DATA = [
     ("SOFAC", "9cC36bMZCt9fF53eLBQCago1czw5L9GRHZBL5adWEyAu", "SofaCat"),
     ("REL", "9HvM3nS2eDKWxNvi8vSFXRhHA1xhDW33rt4ZA1bE1DbV", "Relend"),
     ("LAPUPU", "8PH1XWXyhvFWXWeixSbcWmfHX4uRJHQtcjnwkCgzfTkY", "Lapupu"),
+    ("SANTAI", "7nmNad9z3ZFp1ac63P75cJMcGL43LtxZVEJpx8iusHSS", "Santa AI"),
+    ("OIIA", "DU16Ea8MidPg8GcDYhCBx88THwYXSDiAXDnGA7xfe1HA", "OiiaOiia"),
+    ("SOLdotX", "7mSU5ZJsYsm3CPf2gzfYAWXE6CghFw86k7vjkpsYznzP", "SOLdotX"),
+    ("PEG", "ARXn3nwwPeGYD3dZWDbtDiDDRTYaW9PXtBKwGjLRpump", "Pengwin"),
+    ("BCAT", "7bQsj9DciGXs6cTkhB3D1WbcEjuMpmD7amQRWjEVBpu", "Bodega Cat"),
+    ("THECAT", "DRTeDJXZYYZxmq3tmgSPvLi3ef5E51cRH1KzzwXvC5M7", "THECAT"),
 ]
 
 _TICKER_TO_DATAFRAME: Dict[str, pd.DataFrame] = {}
@@ -184,6 +191,8 @@ def update_price_history() -> None:
                 dt_object = datetime.datetime.fromtimestamp(timestamp, pytz.UTC)
                 value = data_point["value"]
                 csv_writer.writerow((timestamp, dt_object.strftime("%Y-%m-%d %H:%M:%S %Z"), value))
+
+        time.sleep(1)
 
 def download_usd_nok_price_history() -> None:
 

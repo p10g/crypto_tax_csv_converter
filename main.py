@@ -127,6 +127,7 @@ def main() -> None:
             num_spend = 0
             num_jupiter_dca_open = 0    
             num_jupiter_limit_open = 0
+            num_staking = 0
             num_unkown = 0
 
             txid_to_nft_id_map: Dict[str, Optional[str]] = my_io.load_tx_nft_dictionary_from_file()
@@ -142,7 +143,8 @@ def main() -> None:
                 fee_currency = clean_currency_code(fee_currency)
 
                 # Each row is a list containing the values in the row
-                if received_amount == "1.0" and not is_valid_ticker(received_currency):
+                if (received_amount == "1.0" and not is_valid_ticker(received_currency) or 
+                    sent_amount == "1.0" and not is_valid_ticker(sent_currency)):
                     num_orca_nft += 1
 
                     continue # this is the Orca NFT that belongs to the Orca deposit. Not interesting from a tax perspective
@@ -190,6 +192,10 @@ def main() -> None:
 
                 if tx_type == SolanaTxType.JUPITER_LIMIT_OPEN.value:
                     num_jupiter_limit_open += 1
+                    continue
+
+                if tx_type == SolanaTxType.STAKING.value:
+                    num_staking += 1
                     continue
 
                 if tx_type == SolanaTxType.UNKNOWN.value:
@@ -258,7 +264,7 @@ def main() -> None:
 
                     print("Unknown, not written!")
 
-                raise RuntimeError('tx_type "{}" is not handled'.format(tx_type))
+                raise RuntimeError(f"tx_type \"{tx_type}\" is not handled")
             
             if tx_nft_map_new_entries > 0:
                 my_io.save_tx_nft_dictionary_to_file(txid_to_nft_id_map)
@@ -271,8 +277,17 @@ def main() -> None:
             print("num_spend:", num_spend)
             print("num_jupiter_dca_open:", num_jupiter_dca_open)
             print("num_jupiter_limit_open:", num_jupiter_limit_open)
+            print("num_staking:", num_staking)
             print("num_unkown:", num_unkown)
-            print("sum_in:", num_trade + num_orca_nft + num_transfer + num_spend + num_jupiter_dca_open + num_jupiter_limit_open + num_unkown)
+            print("sum_in:", 
+                  num_trade + 
+                  num_orca_nft + 
+                  num_transfer + 
+                  num_spend + 
+                  num_jupiter_dca_open + 
+                  num_jupiter_limit_open + 
+                  num_staking + 
+                  num_unkown)
             print("sum_out:", num_trade + num_transfer + num_spend + num_unkown)
                 
     print("Conversion finished successfully")
