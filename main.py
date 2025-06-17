@@ -1,6 +1,7 @@
 import csv
 import pytz
 
+import mappings
 import my_io
 import price_history.queries as price_queries
 import utils
@@ -92,8 +93,14 @@ def convert_spending(
 def is_valid_ticker(ticker: str) -> bool:
     return len(ticker) < 10 and all(c.isupper() or c.isnumeric for c in ticker)
 
+def convert_to_kryptosekken_ticker(ticker: str) -> str:
+    if ticker in mappings.PUBLIC_TICKERS_TO_KRYPTOSEKKEN_TICKERS:
+        return mappings.PUBLIC_TICKERS_TO_KRYPTOSEKKEN_TICKERS[ticker]
+    return ticker
+
 def clean_currency_code(currency: str) -> str:
-    return currency.replace("$", "")    # replaces $WIF with WIF. Kryptosekken doesn't like $WIF
+    ticker = currency.replace("$", "")    # replaces $WIF with WIF. Kryptosekken doesn't like $WIF
+    return convert_to_kryptosekken_ticker(ticker)
 
 def main() -> None:
 
@@ -103,7 +110,7 @@ def main() -> None:
     except Exception as e:
         print(e)
 
-    with open('default.csv', 'r') as csvfile_in:
+    with open('transaksjoner-2025.csv', 'r') as csvfile_in:
         csv_reader = csv.reader(csvfile_in)
         source = get_source(csv_reader)
         
@@ -112,6 +119,8 @@ def main() -> None:
 
         output_fields = ["Tidspunkt", "Type", "Inn", "Inn-Valuta", "Ut", "Ut-Valuta", "Gebyr", "Gebyr-Valuta", "Marked", "Notat"]
         output_filename = "til_kryptosekken {}.csv".format(datetime.now().strftime(DATE_FORMAT_FILE_NAME))
+
+        filters = ["NVDA2"]
 
         with open(output_filename, 'w', newline='') as csvfile_out:
             # creating a csv writer object
@@ -151,10 +160,16 @@ def main() -> None:
                 
                 orig_received_currency = received_currency
                 if 40 < len(received_currency):
-                    received_currency = get_ticker_by_token_address(received_currency)
+                    received_currency = convert_to_kryptosekken_ticker(get_ticker_by_token_address(received_currency))
                 if 40 < len(sent_currency):
-                    sent_currency = get_ticker_by_token_address(sent_currency)
-                    
+                    sent_currency = convert_to_kryptosekken_ticker(get_ticker_by_token_address(sent_currency))
+                
+                if len(filters) > 0 and (
+                    received_currency not in filters and 
+                    sent_currency not in filters and
+                    fee_currency not in filters):
+                    continue
+
                 date_str_out = convert_date_format(date_str_in, source)
                 if tx_type == SolanaTxType.TRADE.value:
                     csv_writer.writerow([date_str_out, KryptoSekkenType.HANDEL.value, received_amount, received_currency, sent_amount, sent_currency, fee, fee_currency, exchange, make_notat(comment, txid)])

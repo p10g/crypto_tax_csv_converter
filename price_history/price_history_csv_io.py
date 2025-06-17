@@ -54,6 +54,17 @@ _TOKEN_DATA = [
     ("SOLARIS", "3RfQPYVJgJbwyB3BzqqypCEWWryxjTfFDAcXQsckpump", "Solaris AI"),
     ("TITS", "23CTZMjEYNNZUE4itfn3iv6kgM4xn7X7dx1kVX1Gr8Xi", "We Love Tits"),
     ("EFR", "9So37icWcKmuMGFPPR36a82Q1E5gZJ6HFSz7Eynfpump", "End Federal Reserve"),
+    ("MAYA", "25x9Av7ddPJQFVJy512VzzQ96A2Tqza22LtfHTKCpump", "Maya"),
+    ("Aurora", "bozdUuCb2kdipxES9PzsYHmDVrf7FBTSW3p1CFBpump", "Aurora"),
+    ("Tilly", "HuiVprCHCucHUb5bX6EXFJd7wuwvdASFzzge4ahXpump", "a16z AI Dog"),
+    ("UNFK", "8MgghUHzWyCXSQb4ReqrYQZ9rL8cQNaZ84GsqWhTB4Uu", "UNFK"),
+    ("Barbital", "51gy8iy4rnFT4sMe3xgm6CdnMwimvp7yEfVX6e823vaw", "MEMECOIN CREATER"),
+    ("UWU", "UwU8RVXB69Y6Dcju6cN2Qef6fykkq6UUNpB15rZku6Z", "Unicorn"),
+    ("SCF", "GiG7Hr61RVm4CSUxJmgiCoySFQtdiwxtqf64MsRppump", "Smoking Chicken Fish"),
+    ("PUPS", "2oGLxYuNBJRcepT1mEV6KnETaLD7Bf6qq3CM6skasBfe", "PUPS"),
+    ("LUCI", "5Ke381D44MEQg3BQarWhAwhj1xbdNvXe2KHkTiZzw7r5", "LUCI"),
+    ("Merlin", "H6hDKHct9qPuo8Q8x1qkbLafe4EBGbRKnbPM8wXxpump", "Miracle Goldfish"),
+    ("VINE", "6AJcP7wuLwmRYLBNbi825wgguaPsWzPBEHcHndpRpump", "Vine Coin"),
 ]
 
 _DUST_TOKEN_DATA = [
@@ -82,6 +93,10 @@ _DUST_TOKEN_DATA = [
     ("PEG", "ARXn3nwwPeGYD3dZWDbtDiDDRTYaW9PXtBKwGjLRpump", "Pengwin"),
     ("BCAT", "7bQsj9DciGXs6cTkhB3D1WbcEjuMpmD7amQRWjEVBpu", "Bodega Cat"),
     ("THECAT", "DRTeDJXZYYZxmq3tmgSPvLi3ef5E51cRH1KzzwXvC5M7", "THECAT"),
+    ("MCD", "CDipx4rp3sN6nwtH64dTxBEVzm3TL7FMgqakvt56pump", "Fuck McDonalds"),
+    ("DBR", "DBRiDgJAMsM95moTzJs7M9LnkGErpbv9v6CUR1DXnUu5", "deBridge"),
+    ("SHINO", "Dr17sHZf8e1khieA9KvsDj6q39MSeRWSNSfn27GAPTMD", "DinoShiba"),
+    ("TRUMPUTIN", "71ERQrte6SRJ6unxRshgUKw5aJUbmtMoUcA8WHUegXkC", "Official Trump - Putin"),
 ]
 
 _TICKER_TO_DATAFRAME: Dict[str, pd.DataFrame] = {}
